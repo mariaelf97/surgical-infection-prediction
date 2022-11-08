@@ -72,6 +72,10 @@ licensed_facilities$Facility_ID<-as.numeric(licensed_facilities$Facility_ID)
 ```{r}
 SSI_fac_ID_joined<-SSI_adult_patients_unzip_clean%>%inner_join(licensed_facilities,by="Facility_ID")
 ```
+```{r}
+hosp_char<-fread("https://data.chhs.ca.gov/dataset/5f7ad2ce-3837-44b9-a3ff-c4d9a9a11e08/resource/108a751b-7377-4e8e-aab8-8016f55b846f/download/snfd-drgcalifornia-prov.char.19-20.csv")
+```
+
 ## Keep columns we need
 ```{r}
 SSI_fac_ID_final<-SSI_fac_ID_joined%>% select(Year,County,Operative_Procedure,Hospital_Category_RiskAdjustment,Procedure_Count,Infections_Reported,LICENSED_CERTIFIED,FAC_TYPE_DESCRIPTION,FAC_FAC_RELATIONSHIP)
@@ -80,6 +84,8 @@ SSI_fac_ID_final<-SSI_fac_ID_joined%>% select(Year,County,Operative_Procedure,Ho
 ```{r}
 colSums(is.na(SSI_fac_ID_final))
 ```
+
+#https://data.chhs.ca.gov/dataset/e89100fd-1f1d-4a37-8205-d588aa42e5a1/resource/e083f267-43bf-427b-9ee3-f53faaff5d7e
 
 
 
