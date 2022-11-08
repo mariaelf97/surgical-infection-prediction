@@ -13,7 +13,8 @@ library(openxlsx)
 ```{r}
 read_data<-function(URL)
 {
-  data <- fread(URL)%>%select(Year,County,Operative_Procedure,Facility_ID,Facility_Name,Hospital_Category_RiskAdjustment,Facility_Type,Procedure_Count,Infections_Reported)
+ 
+  data <- fread(URL)%>%select(Year,County,Operative_Procedure,Facility_ID,Hospital_Category_RiskAdjustment,Procedure_Count,Infections_Reported)
   return(data)
   
 }
@@ -23,7 +24,8 @@ read_data<-function(URL)
 URL_list <- c("https://data.chhs.ca.gov/dataset/f243090b-4c05-4c61-b614-7cb49b86b21d/resource/294eff96-096e-4b91-bff5-8de78fda318b/download/cdph_ssi_adult_odp_2021.csv",
               "https://data.chhs.ca.gov/dataset/f243090b-4c05-4c61-b614-7cb49b86b21d/resource/e6828e3c-bf54-4991-865b-b4cc11719b8d/download/cdph_ssi_adult_odp_2020h1.csv",
               "https://data.chhs.ca.gov/dataset/f243090b-4c05-4c61-b614-7cb49b86b21d/resource/eb324b4d-d2d2-41e8-aa53-f1b8380b4692/download/cdph_ssi_adult_odp_2020h2.csv",
-              "https://data.chhs.ca.gov/dataset/f243090b-4c05-4c61-b614-7cb49b86b21d/resource/238ff746-71d9-4507-95d0-2a7b5146f4f5/download/cdph_ssi_adult_odp_2019.csv"
+              "https://data.chhs.ca.gov/dataset/f243090b-4c05-4c61-b614-7cb49b86b21d/resource/238ff746-71d9-4507-95d0-2a7b5146f4f5/download/cdph_ssi_adult_odp_2019.csv",
+              "https://data.chhs.ca.gov/dataset/f243090b-4c05-4c61-b614-7cb49b86b21d/resource/bfbface5-a54a-43ae-a9a0-74d70dcc9d18/download/cdph_ssi_adult_odp_2018.csv"
               )
 ```
 ## applying the function to read all datasets
@@ -51,18 +53,20 @@ colSums(is.na(SSI_adult_patients_unzip))
 ```{r}
 SSI_adult_patients_unzip_clean<-SSI_adult_patients_unzip[complete.cases(SSI_adult_patients_unzip)]
 ```
-
+## Reading facility license dataset
 ```{r}
 licensed_facilities = read.xlsx("https://data.chhs.ca.gov/dataset/e89100fd-1f1d-4a37-8205-d588aa42e5a1/resource/e083f267-43bf-427b-9ee3-f53faaff5d7e/download/odp_elms_aspen_oshpd_cw_mar2022.xlsx",sheet=1)
 ```
+
+## change the column name to merge with the SSI dataset
 ```{r}
 colnames(licensed_facilities)[colnames(licensed_facilities) == 'ELMS_FACID'] <- 'Facility_ID'
 ```
-
+## change column type merge with the SSI dataset
 ```{r}
 licensed_facilities$Facility_ID<-as.numeric(licensed_facilities$Facility_ID)
 ```
-
+## join two datasets
 ```{r}
 SSI_fac_ID_joined<-SSI_adult_patients_unzip_clean%>%inner_join(licensed_facilities,by="Facility_ID")
 ```
