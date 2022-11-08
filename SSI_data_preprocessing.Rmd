@@ -7,6 +7,7 @@ date: "2022-11-08"
 ```{r echo=FALSE}
 library(tidyverse)
 library(data.table)
+library(openxlsx)
 ```
 ## function to read data
 ```{r}
@@ -50,5 +51,21 @@ colSums(is.na(SSI_adult_patients_unzip))
 ```{r}
 SSI_adult_patients_unzip_clean<-SSI_adult_patients_unzip[complete.cases(SSI_adult_patients_unzip)]
 ```
+
+```{r}
+licensed_facilities = read.xlsx("https://data.chhs.ca.gov/dataset/e89100fd-1f1d-4a37-8205-d588aa42e5a1/resource/e083f267-43bf-427b-9ee3-f53faaff5d7e/download/odp_elms_aspen_oshpd_cw_mar2022.xlsx",sheet=1)
+```
+```{r}
+colnames(licensed_facilities)[colnames(licensed_facilities) == 'ELMS_FACID'] <- 'Facility_ID'
+```
+
+```{r}
+licensed_facilities$Facility_ID<-as.numeric(licensed_facilities$Facility_ID)
+```
+
+```{r}
+SSI_fac_ID_joined<-SSI_adult_patients_unzip_clean%>%inner_join(licensed_facilities,by="Facility_ID")
+```
+
 
 
