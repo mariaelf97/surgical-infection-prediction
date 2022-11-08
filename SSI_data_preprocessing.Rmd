@@ -33,5 +33,22 @@ SSI_adult_patients<- lapply(URL_list,read_data)
 ```{r}
 SSI_adult_patients_unzip<- do.call(rbind,SSI_adult_patients)
 ```
+## check data types 
+```{r}
+str(SSI_adult_patients_unzip)
+```
+## change empty values with NAs
+```{r}
+SSI_adult_patients_unzip<-replace(SSI_adult_patients_unzip,SSI_adult_patients_unzip=="",NA)
+```
+
+## check number of missing values per attribute
+```{r}
+colSums(is.na(SSI_adult_patients_unzip))
+```
+## Removing missing values
+```{r}
+SSI_adult_patients_unzip_clean<-SSI_adult_patients_unzip[complete.cases(SSI_adult_patients_unzip)]
+```
 
 
