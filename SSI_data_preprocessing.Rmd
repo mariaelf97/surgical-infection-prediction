@@ -3,12 +3,14 @@ title: "SSI_data_preprocessing"
 output: html_document
 date: "2022-11-08"
 ---
+
 ## loading necessary libraries
 ```{r echo=FALSE}
 library(tidyverse)
 library(data.table)
 library(openxlsx)
 ```
+
 ## function to read data
 ```{r}
 read_data<-function(URL)
@@ -69,6 +71,14 @@ licensed_facilities$Facility_ID<-as.numeric(licensed_facilities$Facility_ID)
 ## join two datasets
 ```{r}
 SSI_fac_ID_joined<-SSI_adult_patients_unzip_clean%>%inner_join(licensed_facilities,by="Facility_ID")
+```
+## Keep columns we need
+```{r}
+SSI_fac_ID_final<-SSI_fac_ID_joined%>% select(Year,County,Operative_Procedure,Hospital_Category_RiskAdjustment,Procedure_Count,Infections_Reported,LICENSED_CERTIFIED,FAC_TYPE_DESCRIPTION,FAC_FAC_RELATIONSHIP)
+```
+## check for missing values
+```{r}
+colSums(is.na(SSI_fac_ID_final))
 ```
 
 
