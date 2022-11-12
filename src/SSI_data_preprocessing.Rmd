@@ -83,7 +83,7 @@ colSums(is.na(SSI_fac_ID_final))
 ```
 
 ```{r}
-
+write.csv(SSI_fac_ID_final,"SSI_data_preprocessed.csv")
 ```
 
 
