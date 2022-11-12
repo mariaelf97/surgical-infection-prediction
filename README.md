@@ -1,3 +1,14 @@
-# Inter
-# Source
-The source we use is a website called "" accessable at [title](https://data.chhs.ca.gov/dataset/surgical-site-infections-ssis-for-28-operative-procedures-in-california-hospitals/resource/7b8830e5-2de6-4749-8575-b64b9e8017df?view_id=d5542e29-963f-4493-a3ee-309e9ea5ac0d) 
+
+# Setup for developement:
+
+- Setup a python 3.x venv (usually in `.venv`)
+  - You can run `./scripts/create-venv.sh` to generate one
+- `pip3 install --upgrade pip`
+- Install pip-tools `pip3 install pip-tools`
+- Update requirements: `pip-compile --output-file=requirements.txt requirements.in --upgrade`
+- Install requirements `pip3 install -r requirements.txt`
+
+## Update versions
+
+`pip-compile --output-file=requirements.txt requirements.in --upgrade`
+
