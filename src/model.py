@@ -2,6 +2,7 @@ import os
 import sys
 
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import make_column_transformer
@@ -67,6 +68,22 @@ def predict_model(dataset,predictors,response):
     train_auc=roc_auc_score(train_labels, train_probs)
     test_auc=roc_auc_score(test_labels, probs)
 
+    dummies = pd.get_dummies(dataset[features_to_encode])
+    res = pd.concat([dummies, dataset], axis=1)
+    X_train_encoded = res.drop(features_to_encode, axis=1)
+    feature_importances = list(zip(X_train_encoded, rf_classifier.feature_importances_))
+    feature_importances_ranked = sorted(feature_importances, key=lambda x: x[1], reverse=True)
+    [print('Feature: {:35} Importance: {}'.format(*pair)) for pair in feature_importances_ranked];
+    feature_names_25 = [i[0] for i in feature_importances_ranked[:25]]
+    y_ticks = np.arange(0, len(feature_names_25))
+    x_axis = [i[1] for i in feature_importances_ranked[:25]]
+    plt.figure(figsize=(10, 14))
+    plt.barh(feature_names_25, x_axis)  # horizontal barplot
+    plt.title('Random Forest Feature Importance (Top 25)',
+              fontdict={'fontname': 'Comic Sans MS', 'fontsize': 20})
+    plt.xlabel('Features', fontdict={'fontsize': 16})
+    plt.show()
+
     return a_score,train_probs,probs,train_predictions,y_pred,train_auc,test_auc,test_labels,train_labels
 
 
@@ -110,7 +127,6 @@ def evaluate_model(dataset,predictors,response):
     plt.xlabel('False Positive Rate');
     plt.ylabel('True Positive Rate'); plt.title('ROC Curves');
     plt.show();
-
 
 
 def main():
