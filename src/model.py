@@ -34,15 +34,18 @@ def test_train(dataset,predictors,response):
     )
     return train_features, test_features, train_labels, test_labels
 
-
+# function to create a classification model
 def predict_model(dataset,predictors,response):
+    # ensure the results are reproducible 
     seed = 50
     train_features, test_features, train_labels, test_labels = test_train(dataset,predictors,response)
+    # encoding categorical features to numeric
     features_to_encode = train_features.columns[train_features.dtypes == object].tolist()
     col_trans = make_column_transformer(
         (OneHotEncoder(), features_to_encode),
         remainder="passthrough"
     )
+    # defining the classifier
     rf_classifier = RandomForestClassifier(
         min_samples_leaf=50,
         n_estimators=150,
@@ -55,7 +58,9 @@ def predict_model(dataset,predictors,response):
     pipe = make_pipeline(col_trans, rf_classifier)
     pipe.fit(train_features, train_labels)
     y_pred = pipe.predict(test_features)
+    #Accuracy (fraction of correctly classified samples)
     a_score = accuracy_score(test_labels, y_pred)
+    # Make probability predictions
     train_probs = pipe.predict_proba(train_features)[:, 1]
     probs = pipe.predict_proba(test_features)[:, 1]
     train_predictions = pipe.predict(train_features)
@@ -73,6 +78,7 @@ def evaluate_model(dataset,predictors,response):
     train_probs=predict_model(dataset,predictors,response)[1]
     y_test=predict_model(dataset,predictors,response)[7]
     y_train=predict_model(dataset,predictors,response)[8]
+    
     baseline = {}
     baseline['recall']=recall_score(y_test,
                     [1 for _ in range(len(y_test))])
@@ -109,15 +115,20 @@ def evaluate_model(dataset,predictors,response):
 
 def main():
         data = import_data()
+        # remove useless columns
         del data["Facility_ID"]
         del data["Unnamed: 0"]
+        # create a response variable based on infections reported column, if any infections reported response =1 if no response =0
         data["response"] = [0 if x == 0 else 1 for x in data["Infections_Reported"]]
+        # remove infections reported variable because we do not want the model to cheat
         del data["Infections_Reported"]
+        # define response and predictors
         response = "response"
         predictors = [col for col in data.columns if col != response]
         print(f"The accuracy of the model is {round(predict_model(data,predictors,response)[0], 3) * 100} %")
         print(f'Train ROC AUC Score: {predict_model(data,predictors,response)[5]}')
         print(f'Test ROC AUC  Score: {predict_model(data,predictors,response)[6]}')
+        # get ROC curve anf model evaluation stats
         evaluate_model(data, predictors, response)
 
 
