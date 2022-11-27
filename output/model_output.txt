@@ -1,0 +1,6 @@
+The accuracy of the model is 82.89999999999999 %
+Train ROC AUC Score: 0.8667080107971282
+Test ROC AUC  Score: 0.8522920185137978
+RecallBaseline: 1.0Test: 0.35Train: 0.39
+PrecisionBaseline: 0.22Test: 0.76Train: 0.77
+RocBaseline: 0.5Test: 0.85Train: 0.87
