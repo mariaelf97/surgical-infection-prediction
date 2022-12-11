@@ -1,93 +1,85 @@
-The accuracy of the model is 82.89999999999999 %
-Train ROC AUC Score: 0.8667080107971282
-Test ROC AUC  Score: 0.8522920185137978
-RecallBaseline: 1.0Test: 0.35Train: 0.39
-PrecisionBaseline: 0.22Test: 0.76Train: 0.77
-RocBaseline: 0.5Test: 0.85Train: 0.87
-
-
-Feature: Procedure_Count                     Importance: 0.5982317902374449
-Feature: Operative_Procedure_All procedures  Importance: 0.1382274548983895
-Feature: Operative_Procedure_Colon surgery   Importance: 0.05175121800402236
-Feature: Operative_Procedure_Ovarian surgery Importance: 0.026173933691066006
-Feature: Operative_Procedure_Small bowel surgery Importance: 0.023927987882000346
-Feature: Operative_Procedure_Hysterectomy, vaginal Importance: 0.012374866349032355
-Feature: Operative_Procedure_Pacemaker surgery Importance: 0.011997511490166101
-Feature: County_San Diego                    Importance: 0.010635419037542719
-Feature: Operative_Procedure_Rectal surgery  Importance: 0.00974134432931629
-Feature: Year_2019                           Importance: 0.007931051859306978
-Feature: Year_2020H1                         Importance: 0.007699030261415957
-Feature: Operative_Procedure_Spleen surgery  Importance: 0.007114985803208043
-Feature: Year_2020H2                         Importance: 0.006892390677965182
-Feature: Operative_Procedure_Appendix surgery Importance: 0.0067152212203350665
-Feature: Operative_Procedure_Cesarean section Importance: 0.006382426894192694
-Feature: Operative_Procedure_Thoracic surgery Importance: 0.0057702136549182765
-Feature: Operative_Procedure_Kidney surgery  Importance: 0.0056834450136760166
-Feature: Operative_Procedure_Spinal fusion   Importance: 0.00528119644194083
-Feature: Hospital_Category_RiskAdjustment_Critical Access Hospital Importance: 0.004423556142705073
-Feature: Operative_Procedure_Bile duct, liver or pancreatic surgery Importance: 0.004122131308532057
-Feature: Operative_Procedure_Hip prosthesis  Importance: 0.003925289089274601
-Feature: Operative_Procedure_Cardiac surgery Importance: 0.00334829757769845
-Feature: Hospital_Category_RiskAdjustment_Acute Care Hospital Importance: 0.003343502352302477
-Feature: Year_2021                           Importance: 0.0030142484225856954
-Feature: Operative_Procedure_Open reduction of fracture Importance: 0.0029306007668023974
-Feature: Operative_Procedure_Abdominal aortic aneurysm repair Importance: 0.002877789500019703
-Feature: Operative_Procedure_Coronary bypass,chest incision only Importance: 0.002864178276707677
-Feature: County_Santa Clara                  Importance: 0.0025791085468719202
-Feature: County_Sacramento                   Importance: 0.002450317017992222
-Feature: County_Los Angeles                  Importance: 0.0020210953413370035
-Feature: Operative_Procedure_Gallbladder surgery Importance: 0.0018819485582152592
-Feature: Operative_Procedure_Laminectomy     Importance: 0.0014949291322181042
-Feature: Operative_Procedure_Knee prosthesis Importance: 0.0012820643352879429
-Feature: Year_2018                           Importance: 0.0011414635603617328
-Feature: Operative_Procedure_Coronary bypass,chest and donor incisions Importance: 0.0010721160195278653
-Feature: County_Fresno                       Importance: 0.001019160912251247
-Feature: FAC_TYPE_DESCRIPTION_SKILLED NURSING FACILITY Importance: 0.0010014761011935282
-Feature: Operative_Procedure_Gastric surgery Importance: 0.0009891060463865036
-Feature: Operative_Procedure_Exploratory abdominal surgery (laparotomy) Importance: 0.0008958258730935823
-Feature: FAC_FAC_RELATIONSHIP_Consolidated   Importance: 0.0008944792564754621
-Feature: Operative_Procedure_Hysterectomy, abdominal Importance: 0.0008601449858860895
-Feature: County_Alameda                      Importance: 0.0008551344296287296
-Feature: FAC_TYPE_DESCRIPTION_GENERAL ACUTE CARE HOSPITAL Importance: 0.0008021126379659711
-Feature: County_Orange                       Importance: 0.0007806452380070526
-Feature: FAC_FAC_RELATIONSHIP_Parent         Importance: 0.0005829857922267339
-Feature: County_San Bernardino               Importance: 0.00044830383251691873
-Feature: LICENSED_CERTIFIED_LICENSED AND CERTIFIED Importance: 0.0004374687694694544
-Feature: LICENSED_CERTIFIED_LICENSED ONLY    Importance: 0.0003967243887055113
-Feature: County_Contra Costa                 Importance: 0.0003368880694211377
-Feature: County_San Francisco                Importance: 0.0002941587391988022
-Feature: County_Placer                       Importance: 0.00024610888174467037
-Feature: County_Riverside                    Importance: 0.00021434275113106554
-Feature: County_San Mateo                    Importance: 0.00020376875857593715
-Feature: County_San Joaquin                  Importance: 0.00018793221083006218
-Feature: County_Solano                       Importance: 0.0001869560091260117
-Feature: County_Kern                         Importance: 0.00016101368242079758
-Feature: County_Ventura                      Importance: 0.0001534876311189093
-Feature: County_Santa Cruz                   Importance: 0.00014629678427526222
-Feature: County_San Luis Obispo              Importance: 0.00012312593572310926
-Feature: County_Monterey                     Importance: 0.00010662373630152058
-Feature: County_Santa Barbara                Importance: 6.9307221398529e-05
-Feature: County_Siskiyou                     Importance: 4.256652369076503e-05
-Feature: County_Imperial                     Importance: 3.229309345616448e-05
-Feature: County_Madera                       Importance: 3.177324360754705e-05
-Feature: County_Stanislaus                   Importance: 3.1337592966962155e-05
-Feature: County_Sonoma                       Importance: 2.2515048124971927e-05
-Feature: County_Lake                         Importance: 2.0313882317719846e-05
-Feature: County_Butte                        Importance: 2.023905255501208e-05
-Feature: County_Shasta                       Importance: 1.9779210259451107e-05
-Feature: County_Merced                       Importance: 1.807359068498604e-05
-Feature: County_Mendocino                    Importance: 1.756818667197219e-05
-Feature: County_Humboldt                     Importance: 1.4879303309840337e-05
-Feature: Operative_Procedure_Hysterectomy,abdominal Importance: 1.3137906477037941e-05
-Feature: County_Marin                        Importance: 1.2827096645105794e-05
-Feature: County_Yolo                         Importance: 4.993899780096966e-06
+accuracy score:0.7879678620419361
+train AUC:0.751230028373385
+test AUC:0.7339788884855833
+RecallBaseline: 1.0Test: 0.02Train: 0.02
+PrecisionBaseline: 0.21Test: 0.47Train: 0.54
+RocBaseline: 0.5Test: 0.73Train: 0.75
+Feature: Operative_Procedure_Colon surgery   Importance: 0.22702364087535654
+Feature: Operative_Procedure_Small bowel surgery Importance: 0.08780101073818537
+Feature: Operative_Procedure_Ovarian surgery Importance: 0.07580363134288286
+Feature: Operative_Procedure_Hysterectomy, vaginal Importance: 0.04500516585414781
+Feature: County_San Diego                    Importance: 0.0411046920507053
+Feature: Operative_Procedure_Spinal fusion   Importance: 0.0377931923797277
+Feature: Year_2020H2                         Importance: 0.03660483320683017
+Feature: Year_2020H1                         Importance: 0.0360318218484879
+Feature: Operative_Procedure_Rectal surgery  Importance: 0.035808363551960334
+Feature: Operative_Procedure_Pacemaker surgery Importance: 0.033279765079364095
+Feature: Year_2019                           Importance: 0.028775561727323613
+Feature: Operative_Procedure_Spleen surgery  Importance: 0.028084167286623177
+Feature: Operative_Procedure_Hip prosthesis  Importance: 0.026780192112943586
+Feature: Operative_Procedure_Kidney surgery  Importance: 0.0254530438497179
+Feature: County_Sacramento                   Importance: 0.023372011006286025
+Feature: Operative_Procedure_Thoracic surgery Importance: 0.018338728362551283
+Feature: Operative_Procedure_Coronary bypass,chest incision only Importance: 0.017023314441892427
+Feature: County_Santa Clara                  Importance: 0.016250910330050494
+Feature: Operative_Procedure_Open reduction of fracture Importance: 0.013497451128493888
+Feature: Operative_Procedure_Abdominal aortic aneurysm repair Importance: 0.012323275613254463
+Feature: Year_2021                           Importance: 0.012217542082014636
+Feature: Operative_Procedure_Cesarean section Importance: 0.011935942105550518
+Feature: Operative_Procedure_Appendix surgery Importance: 0.011675665849301683
+Feature: Operative_Procedure_Exploratory abdominal surgery (laparotomy) Importance: 0.010919949081983871
+Feature: Operative_Procedure_Knee prosthesis Importance: 0.008495121692161756
+Feature: County_Fresno                       Importance: 0.007640693639496243
+Feature: Operative_Procedure_Coronary bypass,chest and donor incisions Importance: 0.00751519712294984
+Feature: Operative_Procedure_Gallbladder surgery Importance: 0.00693503200978919
+Feature: Operative_Procedure_Cardiac surgery Importance: 0.006752058531492609
+Feature: FAC_TYPE_DESCRIPTION_GENERAL ACUTE CARE HOSPITAL Importance: 0.005721234400189898
+Feature: Year_2018                           Importance: 0.00554319080733544
+Feature: County_Orange                       Importance: 0.0036789660821619588
+Feature: County_Los Angeles                  Importance: 0.0036377890959735735
+Feature: FAC_TYPE_DESCRIPTION_INTERMEDIATE CARE FACILITY/DEVELOPMENTALLY DISABLED - HABILITATIVE Importance: 0.0035116059190162495
+Feature: Operative_Procedure_Bile duct, liver or pancreatic surgery Importance: 0.0033609665799460243
+Feature: Operative_Procedure_Gastric surgery Importance: 0.0030308949697365264
+Feature: Operative_Procedure_Hysterectomy, abdominal Importance: 0.0019479130107071384
+Feature: LICENSED_CERTIFIED_LICENSED AND CERTIFIED Importance: 0.0019333744259047575
+Feature: Operative_Procedure_Laminectomy     Importance: 0.001808329419873908
+Feature: LICENSED_CERTIFIED_LICENSED ONLY    Importance: 0.0016919369509177796
+Feature: County_Contra Costa                 Importance: 0.0016736934426600286
+Feature: County_San Mateo                    Importance: 0.0013872760585285277
+Feature: County_Alameda                      Importance: 0.0013227506776083205
+Feature: County_Kern                         Importance: 0.001182966081269816
+Feature: County_San Luis Obispo              Importance: 0.0011480079945586964
+Feature: County_San Francisco                Importance: 0.001109784131141473
+Feature: County_Riverside                    Importance: 0.0010136599353632691
+Feature: County_Placer                       Importance: 0.000724580086927511
+Feature: County_San Joaquin                  Importance: 0.0005539285131875151
+Feature: County_San Bernardino               Importance: 0.0005016138648592773
+Feature: County_Santa Cruz                   Importance: 0.00048400919967820147
+Feature: County_Ventura                      Importance: 0.00036491523352754967
+Feature: County_Monterey                     Importance: 0.00036007511857852884
+Feature: County_Stanislaus                   Importance: 0.00030903658003805096
+Feature: County_Solano                       Importance: 0.0002399978423699349
+Feature: County_Shasta                       Importance: 0.0002134621080500228
+Feature: County_Siskiyou                     Importance: 0.00020906134575588036
+Feature: County_Santa Barbara                Importance: 0.00020127594269433733
+Feature: County_Madera                       Importance: 0.0001904355372407664
+Feature: County_Humboldt                     Importance: 0.00018993396099361147
+Feature: County_Sonoma                       Importance: 0.00015425032271393398
+Feature: County_Mendocino                    Importance: 0.0001293671626605427
+Feature: County_Merced                       Importance: 9.891136214242072e-05
+Feature: Operative_Procedure_Hysterectomy,abdominal Importance: 9.159098890387335e-05
+Feature: County_Butte                        Importance: 1.5981589611979606e-05
+Feature: County_El Dorado                    Importance: 1.5238648999414965e-05
+Feature: County_Yolo                         Importance: 6.019706648101132e-06
 Feature: County_Amador                       Importance: 0.0
 Feature: County_Calaveras                    Importance: 0.0
 Feature: County_Del Norte                    Importance: 0.0
-Feature: County_El Dorado                    Importance: 0.0
+Feature: County_Imperial                     Importance: 0.0
 Feature: County_Inyo                         Importance: 0.0
 Feature: County_Kings                        Importance: 0.0
+Feature: County_Lake                         Importance: 0.0
 Feature: County_Lassen                       Importance: 0.0
+Feature: County_Marin                        Importance: 0.0
 Feature: County_Modoc                        Importance: 0.0
 Feature: County_Mono                         Importance: 0.0
 Feature: County_Napa                         Importance: 0.0
@@ -111,5 +103,3 @@ Feature: FAC_TYPE_DESCRIPTION_CHRONIC DIALYSIS CLINIC Importance: 0.0
 Feature: FAC_TYPE_DESCRIPTION_COMMUNITY CLINIC Importance: 0.0
 Feature: FAC_TYPE_DESCRIPTION_HOME HEALTH AGENCY Importance: 0.0
 Feature: FAC_TYPE_DESCRIPTION_INTERMEDIATE CARE FACILITY/DEVELOPMENTALLY DISABLED Importance: 0.0
-Feature: FAC_TYPE_DESCRIPTION_INTERMEDIATE CARE FACILITY/DEVELOPMENTALLY DISABLED - HABILITATIVE Importance: 0.0
-Feature: FAC_FAC_RELATIONSHIP_Distinct Part  Importance: 0.0
