@@ -8,8 +8,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import make_column_transformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import make_pipeline
-from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, roc_auc_score, roc_curve, \
-    f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score, roc_curve
 import matplotlib.pyplot as plt
 
 
@@ -84,7 +83,8 @@ def variable_importance(dataset, predictors, response,plot=False):
         plt.barh(feature_names_25, x_axis)  # horizontal barplot
         plt.title('Random Forest Feature Importance (Top 25)',
                   fontdict={'fontname': 'Comic Sans MS', 'fontsize': 20})
-        plt.xlabel('Features', fontdict={'fontsize': 16})
+        plt.xlabel('Features', fontdict={'fontsize': 12})
+        plt.yticks(fontsize=10)
         plt.show()
 
 
